@@ -17,6 +17,21 @@ h4 { font-family: 'Alegreya Sans SC'; font-size: 2rem; }
 #dashboard { background-color: white; opacity: 0.9; padding: 1rem; text-align: left; overflow: hidden; }
 
 #profile { text-align: left; width: 300px; height: 200px; }
-#profile h4 { margin: 0; }
+
+#profile h4 { margin: 0 0 0.5rem 0; }
+
 #profile img { margin: 0 0.5rem 0.5rem 0; float: left; }
+
 #profile p { font-family: 'Alegreya Sans SC'; padding: 0; font-size: 1.5rem; }
+
+#record-story { background-color: white; opacity: 0.9; }
+
+#record-story h3 { font-family: 'Over the Rainbow'; }
+
+.add-story { font-family: 'Alegreya Sans SC'; }
+
+#results { background-color: white; font-size: 1.5rem; font-weight: bold; border: 2px solid black; min-height: 180px; margin-left: 2em; width: 88%; text-align: center; }
+
+#status { color: white; text-align: center; margin-left: 6em; }
+
+#record { background-color: transparent; text-align: center; }
