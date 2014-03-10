@@ -4,7 +4,7 @@ class StoriesController < ApplicationController
   end
 
   def index
-    @stories = Story.find_by(user_id)
+    #@stories = Story.find_by(user_id)
   end
 
   def new

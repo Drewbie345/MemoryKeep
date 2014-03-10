@@ -1,149 +1,22 @@
 // Place all the styles related to the Stories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import url(http://fonts.googleapis.com/css?family=Alegreya+Sans+SC:100,400|Sigmar+One|Over+the+Rainbow);
 
-html {
-  background: url(penAndPaper.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='drew.jpg', sizingMethod='scale')";
-  filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.drew.jpg ', sizingMethod='scale');
-}
+#stories { background-color: white; opacity: 0.9; padding: 1rem; }
 
-body .pure-g [class *= "pure-u"],
-.pure-g-r [class *= "pure-u"] {
-    /* Set your content font stack here: */
-    font-family: 'Alegreya Sans SC', 'Over the Rainbow';
-    text-align: center;
-    color: black;
-}
+#stories h3 { font-family: 'Over the Rainbow'; font-size: 2.5rem; }
 
-a { 
-  text-decoration: none;
-  color: black;
-}
+.story-preview { columns: 200px 3; -webkit-columns: 200px 3; -moz-columns: 200px 3; font-family: 'Alegreya Sans SC'; }
 
-h1 {
-  font-family: 'Over the Rainbow';
-  text-align: left;
-}
+h4 { font-family: 'Alegreya Sans SC'; font-size: 2rem; }
 
-h2 {
-  font-family: 'Alegreya Sans SC';
-  text-align: left;
-}
+#window { border: 2px solid black; border-radius: 10px; height: 300px; width: 60%; float: left; margin-right: 2rem; }
 
-#title {
-  font-size: 4rem;
-  background-color: white;
-  opacity: 0.9;
-  padding-left: 0.75rem;
-  margin-bottom: .25rem;
-  margin-top: .25rem;
-}
+.categories { font-family: 'Alegreya Sans SC'; font-size: 2rem; margin: 0 1rem;}
 
-#subtitle {
-  font-size: 2.25rem;
-  background-color: white;
-  opacity: 0.9;
-  padding-left: 0.75rem;
-  margin-top: .25rem;
-}
+#dashboard { background-color: white; opacity: 0.9; padding: 1rem; text-align: left; overflow: hidden; }
 
-#button {
-  background-color: white;
-  opacity: 0.9;
-  border-radius: 15px;
-  font-family: 'Over the Rainbow';
-  font-size: 2rem;
-  padding: 0.5rem 2rem;
-}
-
-#button:hover {
-  background-color: #bbbbbb;
-  color: white;
-}
-
-#push {
-  text-align: center;
-  margin-top: 10em;
-}
-
-.pure-menu.pure-menu-open {
-  background: white;
-  opacity: 0.9;
-  color: black;
-}
-
-.pure-menu.pure-menu-open a {
-  color: black;
-}
-
-.pure-menu.pure-menu-open a:hover {
-  background-color: #bbbbbb;
-  color: white;
-}
-
-#login {
-  background-color: white;
-  opacity: 0.9;
-  float: right;
-  padding: .25em .75em;
-}
-
-#results {
-  background-color: white;
-  font-size: 1.5rem;
-  font-weight: bold;
-  border: 2px solid black;
-  min-height: 180px;
-  margin-left: 2em;
-  width: 100%;
-  text-align: center;
-}
-
-#status {
-  color: white;
-  text-align: center;
-  margin-left: 6em;
-}
-#record {
-  background-color: transparent;
-  text-align: center;
-  margin-left: 6em;
-}
-
-form {
-  color: white;
-  
-}
-
-#btn {
-  color: black;
-  background-color: white;
-  padding: 0 1rem;
-  border-radius: 5px;
-}
-
-#message {
-  display: none;
-  text-align: left;
-  color: white;
-  font-size: 2em;
-}
-
-#container {
-  background-color: white;
-  opacity: 0.9;
-  margin: 1em;
-  padding: 1em;
-}
-
-.marg {
-  background-color: white;
-  margin: 2em;
-  padding: 1em;
-}
+#profile { text-align: left; width: 300px; height: 200px; }
+#profile h4 { margin: 0; }
+#profile img { margin: 0 0.5rem 0.5rem 0; float: left; }
+#profile p { font-family: 'Alegreya Sans SC'; padding: 0; font-size: 1.5rem; }

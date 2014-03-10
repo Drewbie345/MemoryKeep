@@ -1,3 +1,29 @@
 // Place all the styles related to the Static_Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body { text-align: center; }
+
+h1 { font-family: 'Over the Rainbow'; background-color: white; opacity: 0.9; font-size: 4rem; margin: 1rem 1rem 1rem 0; padding: 0 0 0 0; }
+
+h2 { font-family: 'Alegreya Sans SC'; background-color: white; opacity: 0.9; margin: 0 0 1rem 0; font-size: 2rem; }
+
+h3 { font-family: 'Alegreya Sans SC'; font-size: 2rem; }
+
+a { text-decoration: none; color: black; font-family: 'Over the Rainbow'; }
+
+#share { background-color: white; border-radius: 10px; opacity: 0.9; padding: 0 1rem; text-align: center; font-size: 2rem;}
+
+#share:hover { background-color: #bbbbbb; color: white; }
+
+.pure-menu-horizontal { opacity: 0.9; }
+
+.pure-menu-horizontal ul li a { font-family: 'Alegreya Sans SC'; color: black; }
+
+#about { background-color: white; opacity: 0.9; font-family: 'Alegreya Sans SC'; padding: 1rem; }
+
+.contact { font-family: 'Alegreya Sans SC'; }
+
+#contact-us { background-color: white; opacity: 0.9; padding: 1rem; }
+
+#login { background-color: white; opacity: 0.9; padding: 0 1rem; }
