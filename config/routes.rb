@@ -1,11 +1,15 @@
 MemoryKeep::Application.routes.draw do
-  root 'static_pages#home'
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
   get '/stories', to: 'stories#all'
   resources :users do
     resources :stories
   end
+  # normally you would want your root page
+  # to be at the bottom so that
+  # it's the last to be checked
+  root 'static_pages#home'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

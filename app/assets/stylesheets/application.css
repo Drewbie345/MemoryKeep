@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+
+/* Remind me to explain to you why you normally
+   want to use sass import instead of using rails pipeline */
+
+/* http://stackoverflow.com/questions/8887824/persisting-scss-variables-in-rails-asset-pipeline */

@@ -21,7 +21,7 @@ body .pure-g [class *= "pure-u"],
     color: black;
 }
 
-a { 
+a {
   text-decoration: none;
   color: black;
 }
@@ -35,6 +35,13 @@ h2 {
   font-family: 'Alegreya Sans SC';
   text-align: left;
 }
+
+// Be careful choosing your ids, these are too generic
+// Think of css style sheet as a your story.
+// ids means the same thing as the #id (i.e the title)
+// There is and can only be one
+// where as a class is the same thing as a ( i.e. a title )
+// there can be more than one.
 
 #title {
   font-size: 4rem;
@@ -118,7 +125,7 @@ h2 {
 
 form {
   color: white;
-  
+
 }
 
 #btn {

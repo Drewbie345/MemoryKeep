@@ -4,13 +4,21 @@ class StoriesController < ApplicationController
   end
 
   def index
+    # look at what resources is producing
+    # and see what it is assigning the user_id to
+    # you can look at your routes by running
+    # rake routes on the directory of your rails project
+    # or going to
+    # localhost:3000/rails/info/routes
+    # http://guides.rubyonrails.org/routing.html#listing-existing-routes
+
     @stories = Story.find_by(user_id)
   end
 
   def new
     @story = Story.new
   end
-  
+
   def create
     @story = Story.new(story_params)
     @story.save
