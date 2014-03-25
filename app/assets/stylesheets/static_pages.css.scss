@@ -26,4 +26,20 @@ a { text-decoration: none; color: black; font-family: 'Over the Rainbow'; }
 
 #contact-us { background-color: white; opacity: 0.9; padding: 1rem; }
 
-#login { background-color: white; opacity: 0.9; padding: 0 1rem; }
+.bg { background-color: white; opacity: 0.9; padding: 0 1rem; }
+
+#sign-up:hover, #login:hover { color: #bbbbbb; }
+
+#signin { background-color: white; color: black; padding: 2rem; font-family: 'Alegreya Sans SC'; display: none; }
+
+#signin #close { float: right; margin: 0;}
+
+#signin h3 { margin: 0; }
+
+#create_account { background-color: white; color: black; padding: 2rem; font-family: 'Alegreya Sans SC'; display: none; }
+
+#create_account #close { float: right; margin: 0;}
+
+#create_account h3 { margin: 0; }
+
+#hello { display: none; }

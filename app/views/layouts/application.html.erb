@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>MemoryKeep</title>
+  <title><%= @title %></title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.4.2/pure-min.css">
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <%= render "shared/header" %>
+
+<% if flash.present? %>
+  <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+  <% end %>
+<% end %> 
 
 <%= yield %>
 

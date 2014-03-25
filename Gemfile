@@ -24,6 +24,7 @@ gem 'rspec-rails'
 gem 'pry-debugger'
 gem 'hirb'
 gem 'simple_form'
+gem 'devise'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
