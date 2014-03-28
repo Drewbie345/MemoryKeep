@@ -1,5 +1,5 @@
 MemoryKeep::Application.routes.draw do
-  
+ 
   devise_for :users, :controllers => {registrations: 'registrations', sessions: 'sessions'}
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'

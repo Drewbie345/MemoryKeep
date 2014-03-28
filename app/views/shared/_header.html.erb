@@ -20,7 +20,21 @@
       <span id="hello"> 
           Welcome <%= @user.first_name %>
       </span>
+      <br />
+      <span id="sign-out">
+        <%= link_to 'Edit Profile', edit_user_registration_path %>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+      </span>
     <% else %>
+      <span id="hello" style="display:none;" > 
+        Welcome <span id="helloName" ></span> <br />
+        <span id="sign-out">
+          <%= link_to 'Edit Profile', edit_user_registration_path %>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+        </span>
+      </span>
       <span id="login">
         Login
       </span>
@@ -42,6 +56,7 @@
 <div id="signin">
   <p id="close1">X</p>
   <h3>Welcome!</h3>
+  <p class="error" style="display:none;"></p>
   <%= form_for(resource, :as => resource_name,
                 :url => session_path(resource_name),
                 :html => {:id => "sign_in_user", :class => "pure-form pure-form-stacked"},
@@ -58,12 +73,13 @@
     <%= f.submit "Login", {:class => "pure-button pure-button-primary"} %>
   <% end %>
 
-  <a href="/users/new"><p>Need an account?</p></a>
+  <a id="need-account" href="#"><p>Need an account?</p></a>
 </div>
 
 <div id="create_account">
   <p id="close2">X</p>
-  <h3>Welcome!</h3>
+  <h3>Create an Account!</h3>
+  <p class="error" style="display:none;"></p>
   <%= form_for(resource, :as => resource_name,
                 :url => registration_path(resource_name),
                 :html => {:id => "sign_up_user", :class => "pure-form pure-form-aligned"},

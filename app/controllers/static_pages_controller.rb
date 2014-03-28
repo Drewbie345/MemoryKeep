@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => [:index, :about, :contact]
   def index
     @title = "Memory Keep"
     @user = current_user
