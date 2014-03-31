@@ -4,9 +4,9 @@ MemoryKeep::Application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
   get '/stories', to: 'stories#all'
-  # resources :users do
-  #   resources :stories
-  # end
+  resources :users do
+    resources :stories
+  end
 
   root 'static_pages#index'
   # The priority is based upon order of creation: first created -> highest priority.

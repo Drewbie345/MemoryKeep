@@ -5,6 +5,8 @@ class Story < ActiveRecord::Base
   belongs_to :user
 
   after_destroy :check_for_orphaned_keywords
+  mount_uploader :attachment, ImageUploader
+
 
   def check_for_orphaned_keywords
     

@@ -25,6 +25,7 @@ gem 'pry-debugger'
 gem 'hirb'
 gem 'simple_form'
 gem 'devise'
+gem 'carrierwave'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 
