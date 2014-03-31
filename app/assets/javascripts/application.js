@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require webspeech
-//= require lightbox_me
 //= require static_pages
 //= require stories
 
