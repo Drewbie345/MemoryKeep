@@ -38,6 +38,12 @@ end
 
 gem 'debugger', '~> 1.6.5'
 
+group :production do
+	gem 'unicorn'
+	gem 'rails_12factor'
+end
+
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
