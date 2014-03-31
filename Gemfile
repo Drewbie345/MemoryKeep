@@ -18,9 +18,9 @@ gem 'devise'
 gem 'jbuilder', '~> 1.2'
 
 group :development do
-	gem 'pry-debugger'
-	gem 'hirb'
-	gem 'debugger', '~> 1.6.5'
+	# gem 'pry-debugger'
+	# gem 'hirb'
+	# gem 'debugger', '~> 1.6.5'
 end
 
 group :development, :test do

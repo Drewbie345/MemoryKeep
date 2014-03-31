@@ -11,12 +11,12 @@ ECHO = $(ECHO1:0=@echo)
 #### Start of system configuration section. ####
 
 srcdir = .
-topdir = /home/vagrant/.rbenv/versions/2.0.0-p451/include/ruby-2.0.0
+topdir = /home/vagrant/.rbenv/versions/2.1.1/include/ruby-2.1.0
 hdrdir = $(topdir)
-arch_hdrdir = /home/vagrant/.rbenv/versions/2.0.0-p451/include/ruby-2.0.0/i686-linux
+arch_hdrdir = /home/vagrant/.rbenv/versions/2.1.1/include/ruby-2.1.0/i686-linux
 PATH_SEPARATOR = :
 VPATH = $(srcdir):$(arch_hdrdir)/ruby:$(hdrdir)/ruby
-prefix = /home/vagrant/.rbenv/versions/2.0.0-p451
+prefix = $(DESTDIR)/home/vagrant/.rbenv/versions/2.1.1
 rubysitearchprefix = $(rubylibprefix)/$(sitearch)
 rubyarchprefix = $(rubylibprefix)/$(arch)
 rubylibprefix = $(libdir)/$(RUBY_BASE_NAME)
@@ -30,8 +30,8 @@ rubyhdrdir = $(includedir)/$(RUBY_VERSION_NAME)
 vendorarchdir = $(vendorlibdir)/$(sitearch)
 vendorlibdir = $(vendordir)/$(ruby_version)
 vendordir = $(rubylibprefix)/vendor_ruby
-sitearchdir = ./.gem.20140331-16434-32b6jn
-sitelibdir = ./.gem.20140331-16434-32b6jn
+sitearchdir = $(DESTDIR)./.gem.20140331-2624-1soprfw
+sitelibdir = $(DESTDIR)./.gem.20140331-2624-1soprfw
 sitedir = $(rubylibprefix)/site_ruby
 rubyarchdir = $(rubylibdir)/$(arch)
 rubylibdir = $(rubylibprefix)/$(ruby_version)
@@ -49,7 +49,7 @@ dvidir = $(docdir)
 htmldir = $(docdir)
 infodir = $(datarootdir)/info
 docdir = $(datarootdir)/doc/$(PACKAGE)
-oldincludedir = /usr/include
+oldincludedir = $(DESTDIR)/usr/include
 includedir = $(prefix)/include
 localstatedir = $(prefix)/var
 sharedstatedir = $(prefix)/com
@@ -78,12 +78,12 @@ optflags = -O3 -fno-fast-math
 debugflags = -ggdb3
 warnflags = -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration
 CCDLFLAGS = -fPIC
-CFLAGS   = $(CCDLFLAGS) $(cflags) -march=i686 $(ARCH_FLAG)
+CFLAGS   = $(CCDLFLAGS) -O3 -march=native  -march=i686 $(ARCH_FLAG)
 INCFLAGS = -I. -I$(arch_hdrdir) -I$(hdrdir)/ruby/backward -I$(hdrdir) -I$(srcdir)
 DEFS     = -D_FILE_OFFSET_BITS=64
-CPPFLAGS = -DHAVE_GCC_CAS -I/home/vagrant/.rbenv/versions/2.0.0-p451/include  $(DEFS) $(cppflags)
+CPPFLAGS = -DHAVE_GCC_CAS -I/home/vagrant/.rbenv/versions/2.1.1/include  $(DEFS) $(cppflags)
 CXXFLAGS = $(CCDLFLAGS) $(cxxflags) $(ARCH_FLAG)
-ldflags  = -L. -L/home/vagrant/.rbenv/versions/2.0.0-p451/lib  -fstack-protector -rdynamic -Wl,-export-dynamic
+ldflags  = -L. -L/home/vagrant/.rbenv/versions/2.1.1/lib  -fstack-protector -rdynamic -Wl,-export-dynamic
 dldflags =  
 ARCH_FLAG = 
 DLDFLAGS = $(ldflags) $(dldflags) $(ARCH_FLAG)
@@ -101,16 +101,16 @@ RUBY_BASE_NAME = ruby
 
 arch = i686-linux
 sitearch = $(arch)
-ruby_version = 2.0.0
+ruby_version = 2.1.0
 ruby = $(bindir)/ruby
 RUBY = $(ruby)
-ruby_headers = $(hdrdir)/ruby.h $(hdrdir)/ruby/defines.h $(arch_hdrdir)/ruby/config.h
+ruby_headers = $(hdrdir)/ruby.h $(hdrdir)/ruby/ruby.h $(hdrdir)/ruby/defines.h $(hdrdir)/ruby/missing.h $(hdrdir)/ruby/intern.h $(hdrdir)/ruby/st.h $(hdrdir)/ruby/subst.h $(arch_hdrdir)/ruby/config.h
 
 RM = rm -f
 RM_RF = $(RUBY) -run -e rm -- -rf
 RMDIRS = rmdir --ignore-fail-on-non-empty -p
-MAKEDIRS = /bin/mkdir -p
-INSTALL = /usr/bin/install -c
+MAKEDIRS = /bin//mkdir -p
+INSTALL = /usr/bin//install -c
 INSTALL_PROG = $(INSTALL) -m 0755
 INSTALL_DATA = $(INSTALL) -m 644
 COPY = cp
@@ -144,12 +144,13 @@ DLLIB = $(TARGET).so
 EXTSTATIC = 
 STATIC_LIB = 
 
-BINDIR        = $(DESTDIR)$(bindir)
-RUBYCOMMONDIR = $(DESTDIR)$(sitedir)$(target_prefix)
-RUBYLIBDIR    = $(DESTDIR)$(sitelibdir)$(target_prefix)
-RUBYARCHDIR   = $(DESTDIR)$(sitearchdir)$(target_prefix)
-HDRDIR        = $(DESTDIR)$(rubyhdrdir)/ruby$(target_prefix)
-ARCHHDRDIR    = $(DESTDIR)$(rubyhdrdir)/$(arch)/ruby$(target_prefix)
+TIMESTAMP_DIR = .
+BINDIR        = $(bindir)
+RUBYCOMMONDIR = $(sitedir)$(target_prefix)
+RUBYLIBDIR    = $(sitelibdir)$(target_prefix)
+RUBYARCHDIR   = $(sitearchdir)$(target_prefix)
+HDRDIR        = $(rubyhdrdir)/ruby$(target_prefix)
+ARCHHDRDIR    = $(rubyhdrdir)/$(arch)/ruby$(target_prefix)
 
 TARGET_SO     = $(DLLIB)
 CLEANLIBS     = $(TARGET).so 
@@ -179,7 +180,7 @@ distclean: clean distclean-so distclean-static distclean-rb-default distclean-rb
 realclean: distclean
 install: install-so install-rb
 
-install-so: $(DLLIB) ./.RUBYARCHDIR.time
+install-so: $(DLLIB) $(TIMESTAMP_DIR)/.RUBYARCHDIR.time
 	$(INSTALL_PROG) $(DLLIB) $(RUBYARCHDIR)
 clean-static::
 	-$(Q)$(RM) $(STATIC_LIB)
@@ -189,8 +190,8 @@ pre-install-rb: Makefile
 pre-install-rb-default: Makefile
 pre-install-rb-default:
 	$(ECHO) installing default atomic_reference libraries
-./.RUBYARCHDIR.time:
-	$(Q) $(MAKEDIRS) $(RUBYARCHDIR)
+$(TIMESTAMP_DIR)/.RUBYARCHDIR.time:
+	$(Q) $(MAKEDIRS) $(@D) $(RUBYARCHDIR)
 	$(Q) $(TOUCH) $@
 
 site-install: site-install-so site-install-rb

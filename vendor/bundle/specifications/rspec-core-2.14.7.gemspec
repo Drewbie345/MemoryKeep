@@ -1,10 +1,12 @@
 # -*- encoding: utf-8 -*-
+# stub: rspec-core 2.14.7 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "rspec-core"
   s.version = "2.14.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib"]
   s.authors = ["Steven Baker", "David Chelimsky", "Chad Humphries"]
   s.bindir = "exe"
   s.date = "2013-10-30"
@@ -15,10 +17,11 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/rspec/rspec-core"
   s.licenses = ["MIT"]
   s.rdoc_options = ["--charset=UTF-8"]
-  s.require_paths = ["lib"]
   s.rubyforge_project = "rspec"
-  s.rubygems_version = "2.0.14"
+  s.rubygems_version = "2.2.2"
   s.summary = "rspec-core-2.14.7"
+
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4

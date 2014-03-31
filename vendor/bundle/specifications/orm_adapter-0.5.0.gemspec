@@ -1,20 +1,23 @@
 # -*- encoding: utf-8 -*-
+# stub: orm_adapter 0.5.0 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "orm_adapter"
   s.version = "0.5.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.3.6") if s.respond_to? :required_rubygems_version=
+  s.require_paths = ["lib"]
   s.authors = ["Ian White", "Jose Valim"]
   s.date = "2013-11-12"
   s.description = "Provides a single point of entry for using basic features of ruby ORMs"
   s.email = "ian.w.white@gmail.com"
   s.homepage = "http://github.com/ianwhite/orm_adapter"
   s.licenses = ["MIT"]
-  s.require_paths = ["lib"]
   s.rubyforge_project = "orm_adapter"
-  s.rubygems_version = "2.0.14"
+  s.rubygems_version = "2.2.2"
   s.summary = "orm_adapter provides a single point of entry for using basic features of popular ruby ORMs.  Its target audience is gem authors who want to support many ruby ORMs."
+
+  s.installed_by_version = "2.2.2" if s.respond_to? :installed_by_version
 
   if s.respond_to? :specification_version then
     s.specification_version = 4
