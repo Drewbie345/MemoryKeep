@@ -31,6 +31,6 @@ end
 gem 'jbuilder', '~> 1.2'
 
 group :production do
-	# gem 'unicorn'
+	gem 'unicorn'
 	gem 'rails_12factor'
 end
