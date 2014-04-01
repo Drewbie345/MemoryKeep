@@ -7,9 +7,16 @@ class Story < ActiveRecord::Base
   after_destroy :check_for_orphaned_keywords
   mount_uploader :attachment, ImageUploader
 
+  # before_save :add_keywords
 
   def check_for_orphaned_keywords
     
   end
+
+  # def add_keywords(params)
+  #   params[:keywords].each do |kw|
+  #     Keyword.create()
+  #   end
+  # end
   
 end

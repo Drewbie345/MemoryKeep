@@ -3,10 +3,10 @@ MemoryKeep::Application.routes.draw do
   devise_for :users, :controllers => {registrations: 'registrations', sessions: 'sessions'}
   get '/about', to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'
-  get '/stories', to: 'stories#all'
-  resources :users do
-    resources :stories
-  end
+  resources :stories
+  get '/sample_stories', to: 'stories#all', as: "sample_stories"
+  
+  resources :users 
 
   root 'static_pages#index'
   # The priority is based upon order of creation: first created -> highest priority.

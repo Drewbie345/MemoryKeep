@@ -1,35 +1,63 @@
-class StoriesController < ApplicationController
+class StoriesController < SecureController
   skip_before_filter :authenticate_user!, :only => [:all]
+  # before_action :set_user, except: [:all]
   
   def all
-    @user = current_user
+    
   end
 
   def index
-    @user = current_user
   end
 
   def new
-    @user = current_user
+     # flash[:failure] = "Story was unsuccessfully created."
+     # @story = current_user.stories.new 
+     # render 'new'
   end
   
   def create
-    @user = current_user
+    @story = current_user.stories.new(title: story_params[:title], body: story_params[:body])
+    if @story.save
+      format_keywords(story_params[:keywords]).each do |kw|
+        @story.keywords.create(tag: kw)
+      end
+      flash[:success] = 'Story was successfully created.'
+      redirect_to @story
+    else
+      render action: 'new'#, flash[:failure] = 'Story was not created.'
+    end    
   end
 
   def edit
-    @user = current_user
+    
   end
 
   def show
-    @user = current_user
+    # @story = @user.stories.last
+    @story = Story.find(params[:id])
   end
 
   def update
-    @user = current_user
+    
   end
 
   def destroy
-    @user = current_user
+    
+  end
+
+  private
+
+  # def set_user
+  #   @user = current_user
+  # end 
+
+  def format_keywords(keywords_param)
+    # keywordsArr = story_params[:keywords].split(',')
+    keywordsArr = keywords_param.split(',')
+    keywordsArr = keywordsArr.each {|x| x.strip! }
+  end
+
+  def story_params
+    params.require(:story).permit(:title, :body, :keywords)
   end
 end

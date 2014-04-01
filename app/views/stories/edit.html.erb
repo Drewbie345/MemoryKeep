@@ -1,11 +1,25 @@
 <div class="pure-g-r">
   <div class="pure-u-4-24"></div>
   <div class="pure-u-16-24 bg-story">
-    <div id="story-header">
-      <p>Story Title</p>
-      <a class="pure-button pure-button-primary" href="#">Want to Add Pictures?</a>
-    </div>
+    <%= form_for(@story, :html => { :class => "pure-form pure-form-aligned" } ) do |f| %>
 
+      <div class="pure-control-group">
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+      </div>
+
+      <div class="pure-control-group">
+        <%= f.label :body %>
+        <%= f.text_field :body %>
+      </div>
+
+      <div class="pure-control-group">
+        <%= f.label :keyword %>
+        <%= f.hidden_field :keyword %>
+      </div>
+
+      <%= submit_tag("Submit") %>
+    <% end %>
   </div>
   <div class="pure-u-4-24"></div>
 </div>

@@ -7,17 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= render "shared/header" %>
+  <%= render "shared/header" %>
+  <%= render "layouts/notifications" %>
 
-<% if flash.present? %>
-  <% flash.each do |name, msg| %>
-      <%= content_tag :div, msg, class: name %>
-  <% end %>
-<% end %> 
+  <%= yield %>
 
-<%= yield %>
-
-<%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>
 

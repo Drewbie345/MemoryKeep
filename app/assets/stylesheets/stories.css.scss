@@ -36,4 +36,17 @@ h4 { font-family: 'Alegreya Sans SC'; font-size: 2rem; }
 
 #record { background-color: transparent; text-align: center; }
 
+#display-story-bg { background-color: white; opacity: 0.9; }
+
+#st-title { text-decoration: underline; }
 .bg-story { background-color: white; opacity: 0.9; margin: 2rem; padding: 1rem;}
+
+#share-story { font-family: 'Alegreya Sans SC'; margin-bottom: 1rem; }
+
+#clean-story { font-family: 'Alegreya Sans SC'; margin: 1rem; display: none; }
+
+#flash-notifications { font-family: 'Alegreya Sans SC'; }
+
+#flash-notifications .success { background-color: green; color: white; }
+
+#flash-notifications .failure { background-color: red; color: white; }

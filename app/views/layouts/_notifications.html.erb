@@ -1,0 +1,11 @@
+<div class="pure-g-r">
+  <div class="pure-u-4-24"></div>
+  <div class="pure-u-16-24"> 
+  <% if flash.present? %>
+    <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, class: name, id: "flash-notifications" %>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="pure-u-4-24"></div>
+</div>

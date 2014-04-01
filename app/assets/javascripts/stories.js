@@ -5,7 +5,7 @@
 $(document).ready(function(){  
   var reco = new WebSpeechRecognition();
   reco.statusText('status');
-  reco.statusImage('img');
+  reco.statusImage('microphone');
   reco.finalResults('final_span');
   reco.interimResults('interim_span');
   reco.continuous = true;
@@ -16,7 +16,7 @@ $(document).ready(function(){
 
   $('#record').click(function(){
     reco.toggleStartStop();
-    $("#body").val($("#results").text().trim())
+    $("#story_body").val($("#results").text().trim())
   })
 
   $('#btn').click(function(){
@@ -29,6 +29,13 @@ $(document).ready(function(){
     reco.onState('complete');
     $('.speech').remove();
 
+  })
+
+  $('#share-story').click(function(e){
+
+    $('#clean-story').show();
+    $('#recording').hide();
+    e.preventDefault();
   })
 
 });

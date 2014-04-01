@@ -1,0 +1,12 @@
+<div class="pure-g-r">
+  <div class="pure-u-4-24"></div>
+  <div id="display-story-bg" class="pure-u-16-24">
+    <h2 id="st-title"><%= @story.title %></h2><br />
+    <h2>Your Story: <%= @story.body %></h2>
+    <h2>Keywords: </h2>
+    <% @story.keywords.each do |kw| %>
+      <h2><%= kw.tag %></h2>
+    <% end %>
+  </div>
+  <div class="pure-u-4-24"></div>
+</div>
